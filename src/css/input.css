@@ -16,12 +16,10 @@
   }
 }
 
-@layer base {
-  @font-face {
-    font-family: "FontAwesome";
-    src: url("../assets/fonts/fontawesome-webfont.ttf") format("opentype");
-    font-style: normal;
-  }
+@font-face {
+  font-family: "FontAwesome";
+  src: url("../assets/fonts/fontawesome-webfont.ttf") format("opentype");
+  font-style: normal;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -32,27 +30,37 @@
   scrollbar-width: none;
 }
 
-/* #industry {
+#industry {
   width: 100%;
   position: relative;
 }
 
-#industry_findInListDiv {
+#industry #industry_findInListDiv {
   width: 100%;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
 }
-#industry_findInListDiv input {
-  color: lightgray;
+#industry #industry_findInListDiv:after {
+  content: "\f002";
+  font-family: "FontAwesome";
+  padding: 0 4px;
+  position: absolute;
+  right: 0;
+}
+#industry #industry_findInListDiv input {
   text-align: center;
-  width: 100%;
+  width: 100% !important;
+  padding: 2px 0;
 }
 
-#industry_checklist::-webkit-scrollbar {
+#industry #industry_checklist::-webkit-scrollbar {
   display: none;
 }
-#industry_checklist {
+#industry #industry_checklist {
   -ms-overflow-style: none;
   scrollbar-width: none;
-  width: 100%;
+  width: 100% !important;
   overflow-y: auto;
   height: 9em !important;
   background-color: white;
@@ -63,8 +71,13 @@
 }
 #industry_checklist ul li {
   padding: 5px 0;
+  cursor: pointer;
 }
-#industry_checklist ul li.focused--inndustry {
+#industry #industry_checklist ul .checked {
   background-color: #3364b6;
   color: white;
-} */
+}
+#industry #industry_actionButtons span {
+  color: white;
+  cursor: pointer;
+}
