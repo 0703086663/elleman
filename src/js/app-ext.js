@@ -5,6 +5,40 @@ var $ = jQuery.noConflict();
 // var apiUrl = 'https://baseapi.x/'
 var apiUrl = "http://127.0.0.1:1337/";
 jQuery(document).ready(function ($) {
+  $(document).ready(function ($) {
+    $industryOpt = $("#industry");
+    $industryOpt.multiselect({
+      addSearchBox: true,
+      addActionBox: true,
+      animateSearch: "normal", // Can be 'normal', 'slow', 'fast', or int number
+      searchBoxText: "Bạn đang làm ngành nghề nào?",
+      showCheckboxes: false,
+      preferIdOverName: true,
+      overwriteName: true,
+      showSelectedItems: true,
+      submitDataAsArray: true,
+    });
+  });
+
+  // Start open popup
+  $("#btn-open-newsletter-popup").click(function () {
+    $("#newsletter-popup").show();
+  });
+  // End open popup
+
+  // Start submit form
+  $("#newsletter_submit_form").click(function () {
+    var form = $("form.newsletter-popup__form");
+    form.submit();
+    $("#first_email_input").show();
+    $("#newsletter_submit_email").show();
+    $("#newsletter_submit_favorite").hide();
+    $("#checkbox_form_group").hide();
+    $("#industry_listinng").hide();
+    $("#newsletter_submit_form").hide();
+  });
+  //   End submit form
+
   $("img.lazy").lazyload();
   $(".old-magazine-btn").click(function () {
     $("#old-magazine-histories").show();
@@ -473,7 +507,7 @@ jQuery(document).ready(function ($) {
     fjs.parentNode.insertBefore(js, fjs);
   })(document, "script", "facebook-jssdk");
 
-  ringier_post_view();
+  // ringier_post_view();
 
   line_menu();
 });

@@ -17,30 +17,30 @@ jQuery(document).ready(function ($) {
   //     animateOut: 'fadeOutLeft'
   // });
 
-  var mv_carousel = $("#mp-carousel").owlCarousel({
-    loop: true,
-    nav: true,
-    items: 5,
-    loop: true,
-    autoplay: false,
-    autoplayTimeout: 4000,
-    autoplaySpeed: 1600,
-    dots: false,
-    responsive: {
-      0: {
-        items: 2,
-        autoplay: true,
-      },
-      600: {
-        items: 3,
-        autoplay: true,
-      },
-      1000: {
-        items: 5,
-        autoplay: false,
-      },
-    },
-  });
+  // var mv_carousel = $("#mp-carousel").owlCarousel({
+  //   loop: true,
+  //   nav: true,
+  //   items: 5,
+  //   loop: true,
+  //   autoplay: false,
+  //   autoplayTimeout: 4000,
+  //   autoplaySpeed: 1600,
+  //   dots: false,
+  //   responsive: {
+  //     0: {
+  //       items: 2,
+  //       autoplay: true,
+  //     },
+  //     600: {
+  //       items: 3,
+  //       autoplay: true,
+  //     },
+  //     1000: {
+  //       items: 5,
+  //       autoplay: false,
+  //     },
+  //   },
+  // });
 
   $(".box-scroll").each(function (i) {
     new SimpleBar(this, {

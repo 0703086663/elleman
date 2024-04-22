@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <link rel="stylesheet" href="./css/style.css">
-
 </head>
 
 <body>
@@ -15,7 +12,7 @@
     <button id="btn-open-newsletter-popup" class="absolute top-1/2 left-1/2 border-2 p-5">Click</button>
 
     <div id="newsletter-popup"
-        class="hidden h-full w-full fixed z-[999] top-0 left-0 bg-black overflow-hidden duration-500 bg-[url('../assets/bg-mobile.jpg')] bg-cover bg-center min-[992px]:bg-[url('../assets/bg-desktop.jpg')] [&>*]:font-[futuraMedium]">
+        class=" h-full w-full fixed z-[999] top-0 left-0 bg-black overflow-hidden duration-500 bg-[url('../assets/bg-mobile.jpg')] bg-cover bg-center min-[992px]:bg-[url('../assets/bg-desktop.jpg')] [&>*]:font-[futuraMedium]">
 
         <a href="javascript:void(0)"
             class="closebtn absolute z-[2] min-[992px]:top-[20px] min-[992px]:right-[45px] min-[992px]:text-[60px] min-[992px]:text-[#ccc] text-[40px] top-[15px] right-[35px] text-black"
@@ -212,70 +209,13 @@
                                 <div id="reg_js_img">
                                     <i class="fa fa-spinner" aria-hidden="true"></i>
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
-
                 </div>
-
             </form>
-
         </div>
     </div>
-
-    <script src="./js/jquery-1.11.3.min.js"></script>
-    <script src="./js/jquery.lazyload.min.js"></script>
-    <script src="./js/jquery.fancybox.pack.js"></script>
-    <script src="./js/jquery-ui.min.js"></script>
-    <script src="./js/jquery.validate.min.js"></script>
-    <script src="./js/owl.carousel.min.js"></script>
-    <script src="./js/jquery.multiselect.js"></script>
-    <script src="./js/sweet-alert.min.js"></script>
-    <script src="./js/common.js"></script>
-
-    <script>
-        var $ = jQuery.noConflict();
-        $(document).ready(function ($) {
-            $industryOpt = $('#industry');
-            $industryOpt.multiselect({
-                addSearchBox: true,
-                addActionBox: true,
-                animateSearch: 'normal', // Can be 'normal', 'slow', 'fast', or int number
-                searchBoxText: 'Bạn đang làm ngành nghề nào?',
-                showCheckboxes: false,
-                preferIdOverName: true,
-                overwriteName: true,
-                showSelectedItems: true,
-                submitDataAsArray: true,
-            });
-        })
-
-        // Start open popup
-        $('#btn-open-newsletter-popup').click(function () {
-            $('#newsletter-popup').show();
-        })
-        // End open popup
-
-        // Start submit form
-        $("#newsletter_submit_form").click(function () {
-            var form = $("form.newsletter-popup__form");
-
-            form.submit();
-
-            $("#first_email_input").show();
-            $("#newsletter_submit_email").show();
-            $("#newsletter_submit_favorite").hide();
-            $("#checkbox_form_group").hide();
-            $("#industry_listinng").hide();
-            $("#newsletter_submit_form").hide();
-        });
-        //   End submit form
-    </script>
-
-    <script src="./js/app-ext.js"></script>
-
 </body>
 
 </html>
