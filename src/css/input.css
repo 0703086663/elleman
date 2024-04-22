@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-newsletter {
+    @apply bg-white border-none w-full duration-300 block text-black p-[8px] text-[20px] min-[992px]:text-[1em] hover:bg-transparent hover:text-white hover:border hover:border-solid hover:border-white hover:duration-500 hover:transition-all cursor-pointer;
+  }
+
+  .label-checkbox-newsletter {
+    @apply before:content-[''] before:font-['FontAwesome'] before:text-[1.1em] before:text-[#416e86] before:float-left before:bg-white before:align-middle before:w-[20px] before:h-[20px] before:text-center;
+  }
+
+  .checkbox-newsletter {
+    @apply absolute opacity-0 cursor-pointer m-[5px] align-middle inline-block;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: "FontAwesome";
+    src: url("../assets/fonts/fontawesome-webfont.ttf") format("opentype");
+    font-style: normal;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* #industry {
+  width: 100%;
+  position: relative;
+}
+
+#industry_findInListDiv {
+  width: 100%;
+}
+#industry_findInListDiv input {
+  color: lightgray;
+  text-align: center;
+  width: 100%;
+}
+
+#industry_checklist::-webkit-scrollbar {
+  display: none;
+}
+#industry_checklist {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  width: 100%;
+  overflow-y: auto;
+  height: 9em !important;
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+#industry_checklist ul li {
+  padding: 5px 0;
+}
+#industry_checklist ul li.focused--inndustry {
+  background-color: #3364b6;
+  color: white;
+} */

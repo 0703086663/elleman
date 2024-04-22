@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+
+    <style>
+        .newsletter-popup {
+            height: 100%;
+            width: 100%;
+            /* display: none; */
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-x: hidden;
+            transition: 0.5s;
+        }
+
+        .newsletter-popup.white-popup-block {
+            background-color: #ffffff;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .popup-desk-bakg {
+            background-image: url("./touliver.jpg");
+        }
+
+        .mfp-content {
+            height: 100%;
+        }
+
+        .float-right {
+            float: right;
+        }
+
+        .newsletter-popup .closebtn {
+            position: absolute;
+            z-index: 2;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+            color: #ccc;
+        }
+
+        .newsletter-popup a:hover,
+        .newsletter-popup a:focus {
+            color: #fff;
+        }
+
+        .newsletter-popup a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 1em;
+            color: #000;
+            display: block;
+            transition: 0.3s;
+        }
+
+        img.desk-logo {
+            display: block;
+        }
+
+        img.mb-logo {
+            display: none;
+        }
+
+        @media (max-width: 992px) {
+            .popup-desk-bakg {
+                background-image: url("./touliver.jpg");
+                height: 100%;
+                width: 100%;
+                margin-top: 0;
+            }
+
+            .float-right {
+                float: none;
+            }
+
+            .newsletter-popup a {
+                font-size: 20px
+            }
+
+            .newsletter-popup .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+                color: #000;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="newsletter-popup"
+        class=" h-full w-full fixed z-[999] top-0 left-0 bg-black overflow-x-hidden duration-500 bg-[url('../assets/bg-mobile.jpg')] bg-cover bg-center min-[992px]:bg-[url('../assets/bg-desktop.jpg')] [&>*]:font-[futuraMedium]">
+
+        <a href="javascript:void(0)"
+            class="closebtn absolute z-[2] min-[992px]:top-[20px] min-[992px]:right-[45px] min-[992px]:text-[60px] min-[992px]:text-[#ccc] text-[40px] top-[15px] right-[35px] text-black"
+            id="close_newsletter_popup">&times;</a>
+
+        <div class="h-full">
+            <div id="newsletter-popup-message" class="text-[2em] hidden text-center pt-[30%] text-white"></div>
+
+            <form action="#" method="POST" accept-charset="utf-8" class="newsletter-popup__form h-full">
+
+                <div class="h-full">
+                    <div class="float-right h-full flex">
+                        <div class="bg-transparent m-auto opacity-80 w-full min-[992px]:w-[55%]">
+                            <div
+                                class="[&>img]:w-[45%] [&>img]:my-[15%] [&>img]:mx-[32%] [&>img]:max-w-full [&>img]:h-auto [&>img]:align-middle">
+                                <img class='hidden min-[992px]:block'
+                                    src="https://www.elleman.vn/wp-content/uploads/2021/05/04/Newsletter-ELLEMan_Logo-05.png"
+                                    alt="" srcset="">
+                                <img class='block min-[992px]:hidden'
+                                    src="https://www.elleman.vn/wp-content/uploads/2021/05/04/Newsletter-ELLEMan_Logo2-05.png"
+                                    alt="" srcset="">
+                            </div>
+
+                            <div id="first_email_input">
+
+                                <div class="text-center">
+                                    <div
+                                        class="!font-[GaborBlack] text-[2em] pt-[2em] pb-[.5em] font-semibold text-white">
+                                        <!-- <?=$title_newsletter?> -->
+                                    </div>
+                                    <label for="Email" class="text-[1.1em] text-white">Nhập email của bạn bên dưới
+                                        để nhận các bước:</label>
+
+                                    <div class="w-[80%] m-auto pt-[1em]">
+                                        <span
+                                            class="before:content-['\f003'] before:!font-[FontAwesome] before:text-[1.1em] before:text-white before:p-[1px] before:float-left"></span>
+                                        <div class="ml-[30px]">
+                                            <input id="subscriber_email" type="email" name="email"
+                                                class="bg-transparent text-[#cccccc] m-auto  rounded-none border-b border-[#cccccc] w-full pl-[10px] outline-none"
+                                                placeholder="Email của bạn" required />
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div id="industry_listinng" class="mx-[19%]">
+                                <div class="text-center text-[1.3em] font-extrabold my-[10%] text-white">
+                                    Bạn đang làm trong lĩnh vực nào?:
+                                </div>
+                                <div class="select select--industry">
+                                    <select name='industry' id='industry'
+                                        class="no-scrollbar w-full h-[10em] outline-none text-center bg-white text-black [&>option]:font-bold"
+                                        multiple="multiple" size="15" required>
+                                        <option value="An toàn lao động">An toàn lao động </option>
+                                        <option value="Bác sĩ">Bác sĩ </option>
+                                        <option value="Bán hàng kỹ thuật">Bán hàng kỹ thuật </option>
+                                        <option value="Bán hàng">Bán hàng </option>
+                                        <option value="Bán sỉ/Bán lẻ">Bán sỉ/Bán lẻ</option>
+                                        <option value="Bảo hiểm">Bảo hiểm </option>
+                                        <option value="Bảo trì/Sửa chữa ">Bảo trì/Sữa chữa </option>
+                                        <option value="Bất động sản">Bất động sản </option>
+                                        <option value="Biên phiên dịch">Biên phiên dịch </option>
+                                        <option value="Cấp quản lí điều hành">Cấp quản lí điều hành </option>
+                                        <option value="Chứng khoán">Chứng khoán</option>
+                                        <option value="Cơ khí">Cơ khí </option>
+                                        <option value="Công nghệ cao">Công nghệ cao </option>
+                                        <option value="Dầu khí">Dầu khí </option>
+                                        <option value="Dệt may/Da giày">Dệt may/Da giày</option>
+                                        <option value="Dịch vụ khách hàng">Dịch vụ khách hàng</option>
+                                        <option value="Dược phẩm/Công nghệ sinnh học">Dược phẩm/Công nghệ sinnh học
+                                        </option>
+                                        <option value="Dược sĩ">Dược sĩ</option>
+                                        <option value="Giáo dục/Đào tạo">Giáo dục/Đào tạo</option>
+                                        <option value="Hàng cao cấp">Hàng cao cấp"</option>
+                                        <option value="Hàng gia dụng">Hàng gia dụng</option>
+                                        <option value="Hàng hải">Hàng hải</option>
+                                        <option value="Hàng không/Du lịch">Hàng không/Du lịch </option>
+                                        <option value="Hàng tiêu dùng">Hàng tiêu dùng</option>
+                                        <option value="Hành chánh/Thư ký">Hành chánh/Thư ký</option>
+                                        <option value="Hoá học/Hoá Sinh">Hoá học/Hoá Sinh</option>
+                                        <option value="Hoạch định/Dự án">Hoạch định/Dự án</option>
+                                        <option value="In ấn/Xuấn bản">In ấn/Xuất bản </option>
+                                        <option value="Internet/Online Media">Internet/Online Media</option>
+                                        <option value="IT - Phần mềm">IT - Phần mềm </option>
+                                        <option value="IT - Phần cứng/Mạng">IT - Phần cứng/Mạng</option>
+                                        <option value="Kế toán">Kế toán </option>
+                                        <option value="Khác">Khác </option>
+                                        <option value="Kho vận">Kho vận </option>
+                                        <option value="Kiểm toán">Kiểm toán </option>
+                                        <option value="Kiến trúc/ Thiết kế nội thất">Kiến trúc/ Thiết kế nội thất
+                                        </option>
+                                        <option value="Marketing">Marketing </option>
+                                        <option value="Mới tốt nghiệp">Mới tốt nghiệp </option>
+                                        <option value="Môi trường/ Xử lý chất thải">Môi trường/ Xử lý chất thải
+                                        </option>
+                                        <option value="Mỹ thuật/ Nghệ thuật/ Thiết kế">Mỹ thuật/ Nghệ thuật/ Thiết kế
+                                        </option>
+                                        <option value="Ngân hàng">Ngân hàng </option>
+                                        <option value="Người nước ngoài/ Việt kiều">Người nước ngoài/ Việt kiều
+                                        </option>
+                                        <option value="Nhà hàng/ Khách sạn">Nhà hàng/ Khách sạn </option>
+                                        <option value="Nhân sự">Nhân sự </option>
+                                        <option value="Nông nghiệp/ Lâm nghiệp">Nông nghiệp/ Lâm nghiệp </option>
+                                        <option value="Overseas jobs">Overseas jobs </option>
+                                        <option value="Pháp lý">Pháp lý </option>
+                                        <option value="Phi chính phủ/ Phi lợi nhuận">Phi chính phủ/ Phi lợi nhuận
+                                        </option>
+                                        <option value="QA/QC">QA/QC </option>
+                                        <option value="Quảng cáo/ Khuyến mãi/ Đối ngoại">Quảng cáo/ Khuyến mãi/ Đối
+                                            ngoại </option>
+                                        <option value="Sản phẩm công nghiệp">Sản phẩm công nghiệp </option>
+                                        <option value="Sản xuất">Sản xuất </option>
+                                        <option value="Tài chính/ Đầu tư">Tài chính/ Đầu tư </option>
+                                        <option value="Thời trang">Thời trang </option>
+                                        <option value="Thời vụ/ Hợp đồng ngắn hạn">Thời vụ/ Hợp đồng ngắn hạn </option>
+                                        <option value="Thu mua/ Vật tư/ Cung vận">Thu mua/ Vật tư/ Cung vận </option>
+                                        <option value="Thực phẩm và đồ uống">Thực phẩm và đồ uống </option>
+                                        <option value="Trình dược viên">Trình dược viên </option>
+                                        <option value="Truyền hình/ Truyền thông/ Báo chí">Truyền hình/ Truyền thông/
+                                            Báo chí </option>
+                                        <option value="Tư vấn">Tư vấn </option>
+                                        <option value="Tự động hóa/ Ô tô">Tự động hóa/ Ô tô </option>
+                                        <option value="Vận chuyển/ Giao nhận">Vận chuyển/ Giao nhận </option>
+                                        <option value="Viễn thông">Viễn thông </option>
+                                        <option value="Xây dựng">Xây dựng </option>
+                                        <option value="Xuất nhập khẩu">Xuất nhập khẩu </option>
+                                        <option value="Y sĩ/ Hộ lý">Y sĩ, Hộ lý </option>
+                                        <option value="Y tế/ Chăm sóc sức khỏe">Y tế/ Chăm sóc sức khỏe </option>
+                                        <option value="Địa chất/ Khoáng sản">Địa chất/ Khoáng sản </option>
+                                        <option value="Điện lạnh/ Nhiệt lạnh">Điện lạnh/ Nhiệt lạnh </option>
+                                        <option value="Điện/ Điện tử">Điện/ Điện tử </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div id="checkbox_form_group">
+                                <div
+                                    class="checkbox-group-title text-[1.1em] my-[5%] mx-[10%] text-center font-bold text-white">
+                                    Bạn muốn nhận thông tin mới nhất từ ELLE theo chủ đề:
+                                </div>
+                                <div
+                                    class="checkbox-group-newsletter text-center text-[1.1em] mx-[20%] [&>div]:border-b [&>div]:border-[#cccccc] [&>div]:leading-[2em][&>div>input]:absolute [&>div>input]:opacity-0 [&>div>*]:inline-block [&>div>*]:align-middle [&>div>*]:m-[5px] [&>div>*]:cursor-pointer [&>div>label]:relative [&>div>label]:w-full [&>div>label]:text-[#cccccc] [&>div>label]:text-center">
+                                    <div class="checkbox">
+                                        <input class="checkbox-newsletter peer/fashion" type="checkbox" name="fashion"
+                                            id="fashion" checked>
+                                        <label
+                                            class="label-checkbox-newsletter peer-checked/fashion:before:content-['\f00c'] peer-checked/fashion:text-white"
+                                            for="fashion"> Fashion</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input class="checkbox-newsletter peer/grooming" type="checkbox" name="grooming"
+                                            id="grooming" checked>
+                                        <label
+                                            class="label-checkbox-newsletter peer-checked/grooming:before:content-['\f00c']  peer-checked/grooming:text-white"
+                                            for="grooming"> Grooming</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input class="checkbox-newsletter peer/entertainment" type="checkbox"
+                                            name="entertainment" id="entertainment" checked>
+                                        <label
+                                            class="label-checkbox-newsletter peer-checked/entertainment:before:content-['\f00c']  peer-checked/entertainment:text-white"
+                                            for="entertainment"> Sports &
+                                            Entertainment</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input class="checkbox-newsletter peer/celebrities" type="checkbox"
+                                            name="celebrities" id="celebrities" checked>
+                                        <label
+                                            class="label-checkbox-newsletter peer-checked/celebrities:before:content-['\f00c']  peer-checked/celebrities:text-white"
+                                            for="celebrities"> Celebrities</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input class="checkbox-newsletter peer/highlights" type="checkbox"
+                                            name="all_in_one" id="all_in_one" checked>
+                                        <label
+                                            class="label-checkbox-newsletter peer-checked/highlights:before:content-['\f00c']  peer-checked/highlights:text-white"
+                                            for="all_in_one"> Highlights</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="btn-submit-newsletter text-center my-[5%] mx-[20%] text-[1.1em]">
+                                <a type="button" id="newsletter_submit_email"
+                                    class="newsletter-submit-btn btn-newsletter">Tiếp
+                                    tục</a>
+                                <a type="button" id="newsletter_submit_favorite"
+                                    class="newsletter-submit-btn btn-newsletter">Tiếp
+                                    tục</a>
+                                <input type="submit" id="newsletter_submit_form"
+                                    class="newsletter-submit-btn btn-newsletter" value="Theo dõi">
+                                <div id="reg_js_img">
+                                    <i class="fa fa-spinner" aria-hidden="true"></i>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/jquery.lazyload.min.js"></script>
+    <script src="./js/jquery.fancybox.pack.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/owl.carousel.min.js"></script>
+    <script src="./js/jquery.multiselect.js"></script>
+    <script src="./js/common.js"></script>
+
+    <!-- <script>
+        var $ = jQuery.noConflict();
+        $(document).ready(function ($) {
+            $industryOpt = $('#industry');
+            $industryOpt.multiselect({
+                addSearchBox: true,
+                addActionBox: true,
+                animateSearch: 'normal', // Can be 'normal', 'slow', 'fast', or int number
+                searchBoxText: 'Bạn đang làm ngành nghề nào?',
+                showCheckboxes: false,
+                preferIdOverName: true,
+                overwriteName: true,
+                showSelectedItems: true,
+                submitDataAsArray: true,
+                cssBlurred: 'input input--multiselect',
+                cssFocused: 'focused--inndustry',
+            });
+        })
+    </script> -->
+
+    <script src="./js/app-ext.js"></script>
+
+</body>
+
+</html>
