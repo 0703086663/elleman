@@ -31,12 +31,12 @@
 }
 
 #industry {
-  width: 100%;
+  width: 100% !important;
   position: relative;
 }
 
 #industry #industry_findInListDiv {
-  width: 100%;
+  width: 100% !important;
   display: flex;
   align-items: center;
   vertical-align: middle;

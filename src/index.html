@@ -11,6 +11,8 @@
 </head>
 
 <body>
+    <!-- Delete -->
+    <button id="btn-open-newsletter-popup" class="absolute top-1/2 left-1/2 border-2 p-5">Click</button>
 
     <div id="newsletter-popup"
         class="hidden h-full w-full fixed z-[999] top-0 left-0 bg-black overflow-hidden duration-500 bg-[url('../assets/bg-mobile.jpg')] bg-cover bg-center min-[992px]:bg-[url('../assets/bg-desktop.jpg')] [&>*]:font-[futuraMedium]">
@@ -60,7 +62,7 @@
 
                             </div>
 
-                            <div id="industry_listinng" class="mx-[19%]">
+                            <div id="industry_listinng" class="mx-[20%]">
                                 <div class="text-center text-[1.3em] font-extrabold my-[10%] text-white">
                                     Bạn đang làm trong lĩnh vực nào?:
                                 </div>
@@ -205,7 +207,7 @@
                                 <a type="button" id="newsletter_submit_favorite"
                                     class="newsletter-submit-btn btn-newsletter">Tiếp
                                     tục</a>
-                                <input type="submit" id="newsletter_submit_form"
+                                <input type="button" id="newsletter_submit_form"
                                     class="newsletter-submit-btn btn-newsletter" value="Theo dõi">
                                 <div id="reg_js_img">
                                     <i class="fa fa-spinner" aria-hidden="true"></i>
@@ -230,6 +232,7 @@
     <script src="./js/jquery.validate.min.js"></script>
     <script src="./js/owl.carousel.min.js"></script>
     <script src="./js/jquery.multiselect.js"></script>
+    <script src="./js/sweet-alert.min.js"></script>
     <script src="./js/common.js"></script>
 
     <script>
@@ -248,6 +251,27 @@
                 submitDataAsArray: true,
             });
         })
+
+        // Start open popup
+        $('#btn-open-newsletter-popup').click(function () {
+            $('#newsletter-popup').show();
+        })
+        // End open popup
+
+        // Start submit form
+        $("#newsletter_submit_form").click(function () {
+            var form = $("form.newsletter-popup__form");
+
+            form.submit();
+
+            $("#first_email_input").show();
+            $("#newsletter_submit_email").show();
+            $("#newsletter_submit_favorite").hide();
+            $("#checkbox_form_group").hide();
+            $("#industry_listinng").hide();
+            $("#newsletter_submit_form").hide();
+        });
+        //   End submit form
     </script>
 
     <script src="./js/app-ext.js"></script>

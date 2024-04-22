@@ -714,12 +714,20 @@ video {
   left: 0px;
 }
 
+.left-1\/2 {
+  left: 50%;
+}
+
 .right-\[35px\] {
   right: 35px;
 }
 
 .top-0 {
   top: 0px;
+}
+
+.top-1\/2 {
+  top: 50%;
 }
 
 .top-\[15px\] {
@@ -745,11 +753,6 @@ video {
 .mx-\[10\%\] {
   margin-left: 10%;
   margin-right: 10%;
-}
-
-.mx-\[19\%\] {
-  margin-left: 19%;
-  margin-right: 19%;
 }
 
 .mx-\[20\%\] {
@@ -835,8 +838,8 @@ video {
   resize: both;
 }
 
-.overflow-x-hidden {
-  overflow-x: hidden;
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .rounded {
@@ -849,6 +852,10 @@ video {
 
 .border {
   border-width: 1px;
+}
+
+.border-2 {
+  border-width: 2px;
 }
 
 .border-b {
@@ -884,6 +891,10 @@ video {
 
 .bg-center {
   background-position: center;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .pb-\[\.5em\] {
@@ -1036,12 +1047,12 @@ video {
 }
 
 #industry {
-  width: 100%;
+  width: 100% !important;
   position: relative;
 }
 
 #industry #industry_findInListDiv {
-  width: 100%;
+  width: 100% !important;
   display: flex;
   align-items: center;
   vertical-align: middle;
