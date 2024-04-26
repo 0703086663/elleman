@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-newsletter {
+    @apply bg-white border-none w-full duration-300 block text-black p-[8px] text-[20px] min-[992px]:text-[1em] hover:bg-transparent hover:text-white hover:border hover:border-solid hover:border-white hover:duration-500 hover:transition-all cursor-pointer;
+  }
+
+  .label-checkbox-newsletter {
+    @apply before:content-[''] before:font-['FontAwesome'] before:text-[1.1em] before:text-[#416e86] before:float-left before:bg-white before:align-middle before:w-[20px] before:h-[20px] before:text-center;
+  }
+
+  .checkbox-newsletter {
+    @apply absolute opacity-0 cursor-pointer m-[5px] align-middle inline-block;
+  }
+}
+
+@font-face {
+  font-family: "FontAwesome";
+  src: url("./assets/fonts/fontawesome-webfont.ttf") format("opentype");
+  font-style: normal;
+}
+
+#industry[multiple]:focus option:checked,
+#industry[multiple] option:checked {
+  background: rgb(23, 23, 143) linear-gradient(0deg, darkblue 0%, darkblue 100%);
+}

@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -14,14 +15,17 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
-        include: path.resolve(__dirname, "src/css"),
+        include: path.resolve(__dirname, "src"),
       },
     ],
   },
   plugins: [
+    new CopyPlugin({
+      patterns: [{ from: "assets/**/*", to: "", context: "src" }],
+    }),
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "index.html",
+      template: path.resolve(__dirname, "src", "index.html"),
     }),
     new webpack.ProvidePlugin({
       $: "jquery",
